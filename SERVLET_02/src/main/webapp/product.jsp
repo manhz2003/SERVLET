@@ -14,41 +14,47 @@
 
 </head>
 <body>
+<%
+    String error_msp = request.getAttribute("error_msp")+"";
+    String value_msp = request.getAttribute("value_msp")+"";
+    String value_giaNhap = request.getAttribute("value_giaNhap")+"";
+    String value_giaBan = request.getAttribute("value_giaBan")+"";
+    String value_VAT = request.getAttribute("value_VAT")+"";
+    String value_moTa = request.getAttribute("value_moTa")+"";
+    String value_tenSanPham = request.getAttribute("value_tenSanPham")+"";
+
+    value_msp = value_msp.equals("null")?"":value_msp;
+    value_giaNhap = value_giaNhap.equals("null")?"":value_giaNhap;
+    value_giaBan = value_giaBan.equals("null")?"":value_giaBan;
+    value_VAT = value_VAT.equals("null")?"":value_VAT;
+    value_moTa = value_moTa.equals("null")?"":value_moTa;
+    value_tenSanPham = value_tenSanPham.equals("null")?"":value_tenSanPham;
+
+%>
 <div class="container mt-4">
-    <form class="row g-3 needs-validation" action="save-product" id="my_form">
+    <form class="row g-3 needs-validation" action="save_product" id="my_form" method="post">
         <div class="row">
             <div class="col-6">
                 <label for="maSanPham" class="form-label">Mã sản phẩm <span class="red">*</span></label>
-                <input type="text" class="form-control" id="maSanPham" value="Mark" required name="maSanPham">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
+                <input type="text" class="form-control" id="maSanPham" name="maSanPham" value="<%=value_msp%>">
+                <div class="red"><%= error_msp%></div>
             </div>
 
             <div class="col-6">
                 <label for="tenSanPham" class="form-label">Tên sản phẩm <span class="red">*</span></label>
-                <input type="text" class="form-control" id="tenSanPham" value="Mark" required name="tenSanPham">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
+                <input type="text" class="form-control" id="tenSanPham" required name="tenSanPham" value="<%=value_tenSanPham%>">
             </div>
         </div>
 
         <div class="row">
             <div class="col-6">
                 <label for="giaNhap" class="form-label">Giá nhập <span class="red">*</span></label>
-                <input type="number" step="0.01" class="form-control" id="giaNhap" value="Mark" required name="giaNhap">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
+                <input type="number" step="0.01" class="form-control" id="giaNhap" value="<%=value_giaNhap%>" required name="giaNhap">
             </div>
 
             <div class="col-6">
                 <label for="giaBan" class="form-label">Giá bán <span class="red">*</span></label>
-                <input type="number" step="0.01" class="form-control" id="giaBan" value="Mark" required name="giaBan">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
+                <input type="number" step="0.01" class="form-control" id="giaBan" value="<%=value_giaBan%>" required name="giaBan">
             </div>
         </div>
 
@@ -56,23 +62,17 @@
             <div class="col-6">
                 <label for="hanSuDung" class="form-label">Hạn sử dụng <span class="red">*</span></label>
                 <input type="datetime-local" step="0.01" class="form-control" id="hanSuDung" name="hanSuDung">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
             </div>
 
             <div class="col-6">
                 <label for="vat" class="form-label">Thuế VAT <span class="red">*</span></label>
-                <input type="number" step="0.01" class="form-control" id="vat" value="Mark" name="vat">
-                <div class="valid-feedback">
-                    Looks good!
-                </div>
+                <input type="number" step="0.01" class="form-control" id="vat" value="<%=value_VAT%>" name="VAT">
             </div>
         </div>
 
         <div class="row">
             <label for="moTa" class="form-label">Mô tả sản phẩm <span class="red">*</span></label>
-            <textarea rows="10" id="moTa" cols="20" name="moTa"> </textarea>
+            <textarea rows="10" id="moTa" cols="20" name="moTa"><%=value_moTa%>> </textarea>
         </div>
 
         <div class="row">
