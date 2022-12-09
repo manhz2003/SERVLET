@@ -15,22 +15,31 @@
 <body>
 <%
     String err_SoLuong = request.getAttribute("err_SoLuong")+"";
-    String err_soDienThoai = request.getAttribute("err_soDienThoai")+"";
-    String err_email = request.getAttribute("err_email")+"";
+    String err_SDT = request.getAttribute("err_SDT")+"";
+    String err_Email = request.getAttribute("err_Email")+"";
 
     err_SoLuong = (err_SoLuong.equals("null"))?"":err_SoLuong;
-    err_soDienThoai = (err_soDienThoai.equals("null"))?"":err_soDienThoai;
-    err_email = (err_email.equals("null"))?"":err_email;
+    err_SDT = (err_SDT.equals("null"))?"":err_SDT;
+    err_Email = (err_Email.equals("null"))?"":err_Email;
+
+//    giữ lại giá trị ô input khi người dùng nhập sai dữ liệu
+    String soLuong = request.getAttribute("soLuong")+"";
+    String soDienThoai = request.getAttribute("soDienThoai")+"";
+    String email = request.getAttribute("email")+"";
+
+    soLuong = (soLuong.equals("null"))?"":soLuong; // nếu số lượng k bằng null thì trả về giá trị của số lượng
+    soDienThoai = (soDienThoai.equals("null"))?"":soDienThoai;
+    email = (email.equals("null"))?"":email;
 %>
 
 <div class="container mt-5">
-    <form action="/muaHang" method="post">
-        Số lượng cần mua <input class="form-control" type="text" name="soLuong" required="required">
+    <form action="muaHang" method="post">
+        Số lượng cần mua <input class="form-control" type="text" name="soLuong" required="required" value="<%=soLuong%>">
         <div class="red"><%= err_SoLuong%></div>  <br>
-        Số điện thoại <input class="form-control"  type="text" name="soDienThoai" required="required">
-        <div class="red"><%= err_soDienThoai%></div> <br>
-        Email <input class="form-control" type="email" name="email" required="required">
-        <div class="red"><%= err_email%></div> <br>
+        Số điện thoại <input class="form-control"  type="text" name="soDienThoai" required="required" value="<%=soDienThoai%>">
+        <div class="red"><%= err_SDT%></div> <br>
+        Email <input class="form-control" type="text" name="email" required="required" value="<%=email%>">
+        <div class="red"><%= err_Email%></div>
         <input type="submit" value="Mua Hàng">
     </form>
 </div>

@@ -16,56 +16,73 @@ public class muaHang extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setCharacterEncoding("UTF-8");
 
+//        lấy ra name của các thẻ input
         String soLuong = request.getParameter("soLuong");
         String soDienThoai = request.getParameter("soDienThoai");
         String email = request.getParameter("email");
 
+//        giữ lại giá trị ô input khi người dùng nhập sai dữ liệu
+        request.setAttribute("soLuong", soLuong);
+        request.setAttribute("soDienThoai", soDienThoai);
+        request.setAttribute("email", email);
+
+
+//        mặc định ta xét cho checkError là false
+//        các trường hợp bắt lỗi ta xét cho checkError = true
+//        khi còn lỗi ta xét cho url = index.jsp, ở lại trang index.jsp, nếu pass qua lỗi thì chuyển trang success.jsp
         boolean checkError = false;
-        double giatri_soluong = 0;
+        int giatri_soluong = 0;
 
 //        bắt lỗi số lượng
         try {
-            giatri_soluong = Double.parseDouble(soLuong);
+            giatri_soluong = Integer.parseInt(soLuong); // ép kiểu về int
+
+            // Bắt lỗi số lượng >= 0
+            if(giatri_soluong <= 0){
+                checkError = true;
+                request.setAttribute("err_SoLuong", "Vui lòng nhập số lượng lớn hơn không !");
+            }
         } catch (Exception e) {
             checkError = true;
             request.setAttribute("err_SoLuong", "Nhập số lượng không hợp lệ !");
         }
-//        Bắt lỗi số lượng > 0
-        if(giatri_soluong == 0){
-            checkError = true;
-            request.setAttribute("err_SoLuong", "Vui lòng nhập số lượng lớn hơn không !");
-        }
+
 //        bắt lỗi số điện thoại
-//
         Pattern soDienThoaiPattern = Pattern.compile("\\d{10}"); // giới hạn sdt chỉ nhập 10 số
         Matcher soDienThoaiMatcher = soDienThoaiPattern.matcher(soDienThoai); // kiểm tra sdt nhập vào khớp với yêu cầu 10 kí tự
 
-        if(!soDienThoaiMatcher.matches()){ // nếu sdt nhập vào không khớp với yêu cầu
-            checkError = true; // thì hiện thông báo lỗi
-            request.setAttribute("err_SDT", " Số điện thoại bao gồm 10 ký tự !");
+
+        try {
+           int sdt = Integer.parseInt(soDienThoai);
+            if( ! soDienThoaiMatcher.matches()){ // nếu sdt nhập vào không khớp với yêu cầu
+                checkError = true;
+                request.setAttribute("err_SDT", " Số điện thoại phải bao gồm 10 ký tự !"); // thì hiện thông báo lỗi
+            }
+        }catch (Exception e){
+            checkError = true;
+            request.setAttribute("err_SDT", "Không hợp lệ !");
         }
 
 //        bắt lỗi email
         Pattern emaillPattern = Pattern.compile("\\w+@\\w+(\\.\\w+)+(\\.\\w+)*");
         Matcher emailMatcher = emaillPattern.matcher(email);
         if(!emailMatcher.matches()){
-            checkError = true; // thì hiện thông báo lỗi
+            checkError = true;
             request.setAttribute("err_Email", "Cấu trúc email không hợp lệ !");
         }
 
-        String url = "/succsess.jsp";
+        String url = "/success.jsp"; // nếu k có lỗi
         if(checkError){
-            url = "/index.jsp";
+            url = "/index.jsp"; // nếu có lỗi thì quay lại trang index.jsp
         }
         RequestDispatcher rq = getServletContext().getRequestDispatcher(url);
         rq.forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doGet(req, resp);
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        doGet(request, response);
     }
 
-    public void destroy() {
-    }
 }
