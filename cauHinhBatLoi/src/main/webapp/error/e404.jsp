@@ -11,7 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Trang không tồn tại</h1>
-<img src="https://matob.web.id/random/wp-content/uploads/sites/2/2021/12/error-404.jpg" alt="error404">
+<% String path = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath(); %>
+<h1>Rất tiếc, trang bạn truy cập không tồn tại!</h1>
+<img alt="Error 404" src="<%=path%>/images/error404.jpg">
 </body>
 </html>

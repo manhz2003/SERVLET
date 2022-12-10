@@ -2,6 +2,7 @@ package com.example.baitap_jsp_01;
 
 import java.io.*;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -12,12 +13,18 @@ public class HelloServlet extends HttpServlet {
     public void init() {
         message = "Hello World!";
     }
-
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
 
 
     }
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+    }
+
+
+
+
 
     public void destroy() {
     }

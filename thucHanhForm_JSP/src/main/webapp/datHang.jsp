@@ -21,6 +21,7 @@
      soLuongSanPham = Integer.parseInt(soLuong);
  }catch (Exception e){
 
+
  }
 %>
 <h1>Xác nhận đặt hàng</h1>

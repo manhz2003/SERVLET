@@ -5,7 +5,7 @@
     <title>Đăng nhập</title>
 </head>
 <body>
-<form action="dangNhap">
+<form action="dangNhap" method="post">
     <h1>Đăng nhập</h1>
     Tên người dùng: <input type="text" name="tenDangNhap"> <br>
     Mật khẩu: <input type="password" name="matKhau"> <br>

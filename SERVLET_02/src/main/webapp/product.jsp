@@ -23,7 +23,8 @@
     String value_moTa = request.getAttribute("value_moTa")+"";
     String value_tenSanPham = request.getAttribute("value_tenSanPham")+"";
 
-    value_msp = value_msp.equals("null")?"":value_msp;
+    value_msp = value_msp.equals("null")?"":value_msp; // nếu value_msp = null thì hiển thị 1 chuỗi rỗng, ngược lại hiển thị value_msp
+    error_msp = error_msp.equals("null")?"":error_msp;
     value_giaNhap = value_giaNhap.equals("null")?"":value_giaNhap;
     value_giaBan = value_giaBan.equals("null")?"":value_giaBan;
     value_VAT = value_VAT.equals("null")?"":value_VAT;

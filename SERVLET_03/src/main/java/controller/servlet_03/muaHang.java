@@ -51,9 +51,9 @@ public class muaHang extends HttpServlet {
         Pattern soDienThoaiPattern = Pattern.compile("\\d{10}"); // giới hạn sdt chỉ nhập 10 số
         Matcher soDienThoaiMatcher = soDienThoaiPattern.matcher(soDienThoai); // kiểm tra sdt nhập vào khớp với yêu cầu 10 kí tự
 
-
+        int sdt = 0;
         try {
-           int sdt = Integer.parseInt(soDienThoai);
+            sdt  = Integer.parseInt(soDienThoai);
             if( ! soDienThoaiMatcher.matches()){ // nếu sdt nhập vào không khớp với yêu cầu
                 checkError = true;
                 request.setAttribute("err_SDT", " Số điện thoại phải bao gồm 10 ký tự !"); // thì hiện thông báo lỗi
