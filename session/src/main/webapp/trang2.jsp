@@ -10,14 +10,14 @@
 <head>
     <title>Title</title>
 </head>
-<body>
+<body style="background-color: red">
   <%
     String username = (String)session.getAttribute("username");
   %>
 
 Xin chào: <%=username%> <br>
 
-  <h1>ĐÂY LÀ TRANG CHÀO MỪNG</h1>
-  <a href="trang1.jsp">Trang 1</a>
+  <h1>ĐÂY LÀ TRANG 2</h1>
+  <a href="trang3.jsp">Trang 3</a>
 </body>
 </html>
