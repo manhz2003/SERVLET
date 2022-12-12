@@ -1,5 +1,4 @@
 package model;
-
 public class chiTietDonHang {
     private String maChiTietDonHang;
     private donHang donHang;
@@ -10,9 +9,6 @@ public class chiTietDonHang {
     private double thueVAT;
     private double tongTien;
 
-    public chiTietDonHang() {
-    }
-
     public chiTietDonHang(String maChiTietDonHang, model.donHang donHang, model.sanPham sanPham, double soLuong, double giaGoc, double giaBan, double thueVAT, double tongTien) {
         this.maChiTietDonHang = maChiTietDonHang;
         this.donHang = donHang;
@@ -22,6 +18,9 @@ public class chiTietDonHang {
         this.giaBan = giaBan;
         this.thueVAT = thueVAT;
         this.tongTien = tongTien;
+    }
+
+    public chiTietDonHang() {
     }
 
     public String getMaChiTietDonHang() {
@@ -87,6 +86,4 @@ public class chiTietDonHang {
     public void setTongTien(double tongTien) {
         this.tongTien = tongTien;
     }
-
-
 }

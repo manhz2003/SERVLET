@@ -60,7 +60,20 @@ public class tacGia {
     }
 
     @Override
+
     public int hashCode() {
         return Objects.hash(maTacGia, hoVaTen, ngaySinh, tieuSu);
     }
+
+    @Override
+    public String toString() {
+        return "tacGia{" +
+                "maTacGia='" + maTacGia + '\'' +
+                ", hoVaTen='" + hoVaTen + '\'' +
+                ", ngaySinh=" + ngaySinh +
+                ", tieuSu='" + tieuSu + '\'' +
+                '}';
+    }
 }
+
+

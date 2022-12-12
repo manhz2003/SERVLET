@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f5d28e15-6537-4e5e-80a8-44502d570437" name="Changes" comment="" />
+    <list default="true" id="f5d28e15-6537-4e5e-80a8-44502d570437" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,7 +22,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/JAVA/JSP-SERVLET/session",
+    "last_opened_file_path": "D:/JAVA/JSP-SERVLET/banSach",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
@@ -33,6 +35,8 @@
       <option name="presentableId" value="Default" />
       <updated>1670669151716</updated>
       <workItem from="1670669152891" duration="34000" />
+      <workItem from="1670709747328" duration="26000" />
+      <workItem from="1670742022696" duration="616000" />
     </task>
     <servers />
   </component>
