@@ -119,4 +119,21 @@ public class donHang {
     public void setNgayGiaoHang(Date ngayGiaoHang) {
         this.ngayGiaoHang = ngayGiaoHang;
     }
+
+    @Override
+    public String toString() {
+        return "donHang{" +
+                "maDonHang='" + maDonHang + '\'' +
+                ", khachHang=" + khachHang +
+                ", diaChiMuaHang='" + diaChiMuaHang + '\'' +
+                ", diaChiNhanHang='" + diaChiNhanHang + '\'' +
+                ", trangThai='" + trangThai + '\'' +
+                ", hinhThucThanhToan='" + hinhThucThanhToan + '\'' +
+                ", trangThaiThanhToan='" + trangThaiThanhToan + '\'' +
+                ", soTienDaThanhToan=" + soTienDaThanhToan +
+                ", soTienConThieu=" + soTienConThieu +
+                ", ngayDatHang=" + ngayDatHang +
+                ", ngayGiaoHang=" + ngayGiaoHang +
+                '}';
+    }
 }

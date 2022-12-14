@@ -8,7 +8,7 @@ public class sanPham {
     private double giaNhap;
     private double giaGoc;
     private double giaBan;
-    private int soLuong;
+    private double soLuong;
     private theLoai theLoai;
     private String ngonNgu;
     private String moTa;
@@ -86,7 +86,7 @@ public class sanPham {
         this.giaBan = giaBan;
     }
 
-    public int getSoLuong() {
+    public double getSoLuong() {
         return soLuong;
     }
 
@@ -116,5 +116,22 @@ public class sanPham {
 
     public void setMoTa(String moTa) {
         this.moTa = moTa;
+    }
+
+    @Override
+    public String toString() {
+        return "sanPham{" +
+                "maSanPham='" + maSanPham + '\'' +
+                ", tenSanPham='" + tenSanPham + '\'' +
+                ", tacGia=" + tacGia +
+                ", namXuatBan=" + namXuatBan +
+                ", giaNhap=" + giaNhap +
+                ", giaGoc=" + giaGoc +
+                ", giaBan=" + giaBan +
+                ", soLuong=" + soLuong +
+                ", theLoai=" + theLoai +
+                ", ngonNgu='" + ngonNgu + '\'' +
+                ", moTa='" + moTa + '\'' +
+                '}';
     }
 }

@@ -23,6 +23,9 @@ public class chiTietDonHang {
     public chiTietDonHang() {
     }
 
+    public chiTietDonHang(String maChiTietDonHang, String maDonHang, String maSanPham, double soLuong, double giaGoc, double giaBan, double thueVAT, double tongTien) {
+    }
+
     public String getMaChiTietDonHang() {
         return maChiTietDonHang;
     }
@@ -85,5 +88,27 @@ public class chiTietDonHang {
 
     public void setTongTien(double tongTien) {
         this.tongTien = tongTien;
+    }
+
+    public String getMaDonHang() {
+        return null;
+    }
+
+    public String getMaSanPham() {
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "chiTietDonHang{" +
+                "maChiTietDonHang='" + maChiTietDonHang + '\'' +
+                ", donHang=" + donHang +
+                ", sanPham=" + sanPham +
+                ", soLuong=" + soLuong +
+                ", giaGoc=" + giaGoc +
+                ", giaBan=" + giaBan +
+                ", thueVAT=" + thueVAT +
+                ", tongTien=" + tongTien +
+                '}';
     }
 }

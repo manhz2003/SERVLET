@@ -16,7 +16,7 @@ public class theLoai {
         return maTheLoai;
     }
 
-    public void setMaTheLoai(String maTheLoai) {
+    public void setMaTheLoai() {
         this.maTheLoai = maTheLoai;
     }
 
@@ -26,5 +26,13 @@ public class theLoai {
 
     public void setTenTheLoai(String tenTheLoai) {
         this.tenTheLoai = tenTheLoai;
+    }
+
+    @Override
+    public String toString() {
+        return "theLoai{" +
+                "maTheLoai='" + maTheLoai + '\'' +
+                ", tenTheLoai='" + tenTheLoai + '\'' +
+                '}';
     }
 }

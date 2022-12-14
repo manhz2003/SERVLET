@@ -16,8 +16,8 @@ public class khachHang {
     private String email;
     private boolean dangKyNhanBangTin;
 
-    public khachHang() {
-    }
+//    public khachHang() {
+//    }
 
     public khachHang(String maKhachHang, String tenDangNhap, String matKhau, String hoVaTen, String gioiTinh, String diaChi, String diaChiNhanHang, String diaChiMuaHang, Date ngaySinh, String soDienThoai, String email, boolean dangKyNhanBangTin) {
         this.maKhachHang = maKhachHang;
@@ -128,5 +128,27 @@ public class khachHang {
 
     public void setDangKyNhanBangTin(boolean dangKyNhanBangTin) {
         this.dangKyNhanBangTin = dangKyNhanBangTin;
+    }
+
+    public boolean getDangKyNhanBangTin() {
+        return false;
+    }
+
+    @Override
+    public String toString() {
+        return "khachHang{" +
+                "maKhachHang='" + maKhachHang + '\'' +
+                ", tenDangNhap='" + tenDangNhap + '\'' +
+                ", matKhau='" + matKhau + '\'' +
+                ", hoVaTen='" + hoVaTen + '\'' +
+                ", gioiTinh='" + gioiTinh + '\'' +
+                ", diaChi='" + diaChi + '\'' +
+                ", diaChiNhanHang='" + diaChiNhanHang + '\'' +
+                ", diaChiMuaHang='" + diaChiMuaHang + '\'' +
+                ", ngaySinh=" + ngaySinh +
+                ", soDienThoai='" + soDienThoai + '\'' +
+                ", email='" + email + '\'' +
+                ", dangKyNhanBangTin=" + dangKyNhanBangTin +
+                '}';
     }
 }
