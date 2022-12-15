@@ -14,41 +14,7 @@ public class chiTietDonHangDAO implements DAOInterface<chiTietDonHang>{
 
     @Override
     public ArrayList<chiTietDonHang> selectAll() {
-        ArrayList<chiTietDonHang> ketQua = new ArrayList<chiTietDonHang>();
-        try {
-            // Bước 1: tạo kết nối đến CSDL
-            Connection con = JDBC.getConnection();
-
-            // Bước 2: tạo ra đối tượng statement
-            String sql = "SELECT * FROM chitietdonhang";
-            PreparedStatement st = con.prepareStatement(sql);
-
-            // Bước 3: thực thi câu lệnh SQL
-            System.out.println(sql);
-            ResultSet rs = st.executeQuery();
-
-            // Bước 4:
-            while(rs.next()) {
-                String maChiTietDonHang = rs.getString("machitietdonhang");
-                String donHang = rs.getString("donhang");
-                String sanPham = rs.getString("sanpham");
-                double soLuong = rs.getDouble("soluong");
-                double giaGoc = rs.getDouble("giagoc");
-                double giaBan = rs.getDouble("giaban");
-                double thueVAT = rs.getDouble("thuevat");
-                double tongTien = rs.getDouble("tongtien");
-
-                chiTietDonHang ctdh = new chiTietDonHang(maChiTietDonHang, donHang, sanPham, soLuong, giaGoc, giaBan, thueVAT, tongTien);
-                ketQua.add(ctdh);
-            }
-
-            // Bước 5: đóng kết nối
-            JDBC.closeConnection(con);
-        } catch (SQLException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        return ketQua;
+        return null;
     }
 
     @Override

@@ -202,7 +202,8 @@ public class theLoaiDAO implements DAOInterface<theLoai>{
 //		}
 //        theLoai tl = tld.selectById(new theLoai("TL1", null));
 //        System.out.println(tl);
-        theLoai tl = new theLoai("TL", "");
+        theLoai tl = new theLoai("TL01", "Truyện tranh");
+        tld.insert(tl);
 
     }
 }
