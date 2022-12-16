@@ -232,10 +232,10 @@ public class sanPhamDAO implements DAOInterface<sanPham>{
     }
 
     public static void main(String[] args) {
-        sanPhamDAO spd = new sanPhamDAO();
-
-        sanPham sp = new sanPham("SP01", "lập trình c", "12", 2003, 20, 20, 20, 10, "12", "tieng viet", "");
-   spd.insert(sp);
+//        sanPhamDAO spd = new sanPhamDAO();
+//
+//        sanPham sp = new sanPham("SP01", "lập trình c", "12", 2003, 20, 20, 20, 10, "12", "tieng viet", "");
+//   spd.insert(sp);
 
     }
 }
