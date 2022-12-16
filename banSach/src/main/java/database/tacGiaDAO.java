@@ -213,8 +213,9 @@ public class tacGiaDAO implements DAOInterface<tacGia> {
 //		tacGia tg = tgd.selectById(new tacGia("TG01", "", null, ""));
 //		System.out.println(tg);
 
-		tacGia tg_new = new tacGia("TG01", "David", new java.sql.Date(2000-1900, 05, 03), "");
-		tgd.insert(tg_new);
+//		tacGia tg_new = new tacGia("TG01", "David", new java.sql.Date(2000-1900, 05, 03), "");
+//		tgd.insert(tg_new);
+
 
 //		TacGia tg_new = new TacGia("TG10", "David", new Date(2000-1900, 10, 15), "");
 //		tgd.delete(tg_new);
