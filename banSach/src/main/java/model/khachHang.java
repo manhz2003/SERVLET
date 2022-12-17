@@ -34,6 +34,10 @@ public class khachHang {
         this.dangKyNhanBangTin = dangKyNhanBangTin;
     }
 
+    public khachHang() {
+
+    }
+
     public String getMaKhachHang() {
         return maKhachHang;
     }

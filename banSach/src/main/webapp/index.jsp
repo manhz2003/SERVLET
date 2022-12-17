@@ -1,9 +1,14 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bookstore</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+            rel="stylesheet"
             integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
             crossorigin="anonymous">
     <script
@@ -16,7 +21,7 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<!-- Menu bar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
         <a class="navbar-brand" href="#"> <img
@@ -39,10 +44,10 @@
                         class="nav-link dropdown-toggle" href="#" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false"> Thể loại </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Áo sơ mi</a></li>
+                        <li><a class="dropdown-item" href="#">Quần Jean</a></li>
                         <li><a class="dropdown-item" href="#">Áo thun</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Quần Jean</a></li>
+                        <li><a class="dropdown-item" href="#">Áo sơ mi</a></li>
                     </ul></li>
                 <li class="nav-item"><a class="nav-link disabled">Hết hàng</a>
                 </li>
@@ -51,32 +56,49 @@
                 <input class="form-control me-2" type="search"
                        placeholder="Nội dung tìm kiếm" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Tìm</button>
+                <a class="btn btn-primary" style="white-space: nowrap;" href="dangky.jsp">
+                    Đăng ký
+                </a>
             </form>
         </div>
     </div>
 </nav>
+<!-- End Navbar -->
 
-<!-- End Menu bar -->
-
-<!-- Page Content -->
-<div class="container">
+<!-- Page content -->
+<div class="container mt-4">
     <div class="row">
+        <!-- Menu left -->
         <div class="col-lg-3">
-            <div class="list-group">
-                <a href="#" class="list-group-item">Thời trang nam</a> <a href="#"
-                                                                          class="list-group-item">Thời trang nữ</a> <a href="#"
-                                                                                                                       class="list-group-item">Dành cho bé</a>
+            <div class="list-group ">
+                <a href="#" class="list-group-item list-group-item-action">
+                    Thời trang nam </a> <a href="#"
+                                           class="list-group-item list-group-item-action">Thời trang nữ</a> <a
+                    href="#" class="list-group-item list-group-item-action">Dành
+                cho bé</a>
             </div>
         </div>
+        <!-- End Menu left -->
+
+        <!-- Slider and Products -->
         <div class="col-lg-9">
             <!-- Slider -->
-            <div id="carouselExampleInterval" class="carousel slide"
-                 data-bs-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide mb-4"
+                 data-bs-ride="true">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to="0" class="active" aria-current="true"
+                            aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
                 <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="10000">
+                    <div class="carousel-item active">
                         <img src="img/slider/1.png" class="d-block w-100" alt="...">
                     </div>
-                    <div class="carousel-item" data-bs-interval="2000">
+                    <div class="carousel-item">
                         <img src="img/slider/2.png" class="d-block w-100" alt="...">
                     </div>
                     <div class="carousel-item">
@@ -84,22 +106,23 @@
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button"
-                        data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                        data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </button>
                 <button class="carousel-control-next" type="button"
-                        data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                        data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
             <!-- End Slider -->
+            <!-- Products -->
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top"
-                                         src="img/products/1.png" alt=""></a>
+                        <a href="#"><img class="card-img-top" src="img/product/1.png"
+                                         alt=""></a>
                         <div class="card-body">
                             <h4 class="card-title">
                                 <a href="#">Áo thun Pro-S1</a>
@@ -114,10 +137,11 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top"
-                                         src="img/products/2.png" alt=""></a>
+                        <a href="#"><img class="card-img-top" src="img/product/2.png"
+                                         alt="" ></a>
                         <div class="card-body">
                             <h4 class="card-title">
                                 <a href="#">Áo thun Pro-S1</a>
@@ -132,10 +156,12 @@
                         </div>
                     </div>
                 </div>
+
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top"
-                                         src="img/products/1.png" alt=""></a>
+                        <a href="#"><img class="card-img-top" src="img/product/3.png"
+                                         alt="" ></a>
                         <div class="card-body">
                             <h4 class="card-title">
                                 <a href="#">Áo thun Pro-S1</a>
@@ -150,10 +176,11 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top"
-                                         src="img/products/2.png" alt=""></a>
+                        <a href="#"><img class="card-img-top" src="img/product/1.png"
+                                         alt="" ></a>
                         <div class="card-body">
                             <h4 class="card-title">
                                 <a href="#">Áo thun Pro-S1</a>
@@ -169,92 +196,40 @@
                     </div>
                 </div>
             </div>
+            <!-- End Products -->
         </div>
+        <!-- End Slider and Products -->
     </div>
 </div>
-<!-- End Page Content -->
+<!-- End Page content -->
 
 <!-- Footer -->
-<footer class="bd-footer py-4 py-md-5 mt-5 bg-light">
-    <div class="container py-4 py-md-5 px-4 px-md-3">
-        <div class="row">
-            <div class="col-lg-3 mb-3">
-                <a
-                        class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none"
-                        href="/" aria-label="Bootstrap"> <svg
-                        xmlns="http://www.w3.org/2000/svg" width="40" height="32"
-                        class="d-block me-2" viewBox="0 0 118 94" role="img">
-                    <title>Bootstrap</title><path fill-rule="evenodd"
-                                                  clip-rule="evenodd"
-                                                  d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
-                                                  fill="currentColor" /></svg> <span class="fs-5">TITV.vn</span>
-                </a>
-                <ul class="list-unstyled small text-muted">
-                    <li class="mb-2">Đây là phần footer
-                    </li>
-                    <li class="mb-2">Code licensed <a
-                            href="https://github.com/twbs/bootstrap/blob/main/LICENSE"
-                            target="_blank" rel="license noopener">TITV.vn</a>, docs <a
-                            href="https://creativecommons.org/licenses/by/3.0/"
-                            target="_blank" rel="license noopener">CC BY TITV.vn</a>.
-                    </li>
-                    <li class="mb-2">Currently v5.2.1.</li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-2 offset-lg-1 mb-3">
-                <h5>Quy định</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="/">Giao hàng</a></li>
-                    <li class="mb-2"><a href="/docs/5.2/">Trả hàng</a></li>
-                    <li class="mb-2"><a href="/docs/5.2/examples/">Đổi hàng</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-2 mb-3">
-                <h5>Guides</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="/docs/5.2/getting-started/">Getting
-                        started</a></li>
-                    <li class="mb-2"><a
-                            href="/docs/5.2/examples/starter-template/">Starter template</a></li>
-                    <li class="mb-2"><a href="/docs/5.2/getting-started/webpack/">Webpack</a></li>
-                    <li class="mb-2"><a href="/docs/5.2/getting-started/parcel/">Parcel</a></li>
-                    <li class="mb-2"><a href="/docs/5.2/getting-started/vite/">Vite</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-2 mb-3">
-                <h5>Projects</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a href="https://github.com/twbs/bootstrap">Bootstrap
-                        5</a></li>
-                    <li class="mb-2"><a
-                            href="https://github.com/twbs/bootstrap/tree/v4-dev">Bootstrap
-                        4</a></li>
-                    <li class="mb-2"><a href="https://github.com/twbs/icons">Icons</a></li>
-                    <li class="mb-2"><a href="https://github.com/twbs/rfs">RFS</a></li>
-                    <li class="mb-2"><a
-                            href="https://github.com/twbs/bootstrap-npm-starter">npm
-                        starter</a></li>
-                </ul>
-            </div>
-            <div class="col-6 col-lg-2 mb-3">
-                <h5>Community</h5>
-                <ul class="list-unstyled">
-                    <li class="mb-2"><a
-                            href="https://github.com/twbs/bootstrap/issues">Issues</a></li>
-                    <li class="mb-2"><a
-                            href="https://github.com/twbs/bootstrap/discussions">Discussions</a></li>
-                    <li class="mb-2"><a href="https://github.com/sponsors/twbs">Corporate
-                        sponsors</a></li>
-                    <li class="mb-2"><a
-                            href="https://opencollective.com/bootstrap">Open Collective</a></li>
-                    <li class="mb-2"><a
-                            href="https://stackoverflow.com/questions/tagged/bootstrap-5">Stack
-                        Overflow</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<footer class="py-3 my-4">
+    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#"
+                                class="nav-link px-2 text-muted">Trag chủ</a></li>
+        <li class="nav-item"><a href="#"
+                                class="nav-link px-2 text-muted">Quy định giao hàng</a></li>
+        <li class="nav-item"><a href="#"
+                                class="nav-link px-2 text-muted">Quy định trả hàng</a></li>
+        <li class="nav-item"><a href="#"
+                                class="nav-link px-2 text-muted">Liên hệ</a></li>
+        <li class="nav-item"><a href="#"
+                                class="nav-link px-2 text-muted">Blogs</a></li>
+    </ul>
+    <p class="text-center text-muted">© 2022 TITV.vn, Inc</p>
 </footer>
-<!-- End Footer -->
+<!-- End footer -->
+
+
+<div class="input-group mb-3">
+
+    <div class="form-floating">
+        <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Username">
+        <label for="floatingInputGroup1">Username</label>
+    </div>
+
+    <span class="input-group-text">@gmail.com</span>
+</div>
 </body>
 </html>

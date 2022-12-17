@@ -13,7 +13,7 @@ public class sanPham {
     private String ngonNgu;
     private String moTa;
 
-    public sanPham(String maSanPham, String tenSanPham, model.tacGia tacGia, int namXuatBan, double giaNhap, double giaGoc, double giaBan, int soLuong, model.theLoai theLoai, String ngonNgu, String moTa) {
+    public sanPham(String maSanPham, String tenSanPham, tacGia tacGia, int namXuatBan, double giaNhap, double giaGoc, double giaBan, int soLuong, theLoai theLoai, String ngonNgu, String moTa) {
         this.maSanPham = maSanPham;
         this.tenSanPham = tenSanPham;
         this.tacGia = tacGia;

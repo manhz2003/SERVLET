@@ -16,7 +16,8 @@ public class tacGia {
         this.tieuSu = tieuSu;
     }
 
-    public tacGia() {
+    public tacGia(String maTacGia) {
+        this.maTacGia = maTacGia;
     }
 
     public String getMaTacGia() {

@@ -12,6 +12,10 @@ public class theLoai {
     public theLoai() {
     }
 
+    public theLoai(String maTheLoai) {
+        this.maTheLoai = maTheLoai;
+    }
+
     public String getMaTheLoai() {
         return maTheLoai;
     }

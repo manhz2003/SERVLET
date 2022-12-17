@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class sanPhamDAO implements DAOInterface<sanPham>{
+public class sanPhamDAO implements DAOInterface<sanPham> {
     @Override
     public ArrayList<sanPham> selectAll() {
         ArrayList<sanPham> ketQua = new ArrayList<sanPham>();
@@ -136,7 +136,6 @@ public class sanPhamDAO implements DAOInterface<sanPham>{
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
         return ketQua;
     }
 
@@ -232,10 +231,9 @@ public class sanPhamDAO implements DAOInterface<sanPham>{
     }
 
     public static void main(String[] args) {
-//        sanPhamDAO spd = new sanPhamDAO();
-//
-//        sanPham sp = new sanPham("SP01", "lập trình c", "12", 2003, 20, 20, 20, 10, "12", "tieng viet", "");
-//   spd.insert(sp);
-
+        sanPhamDAO spd = new sanPhamDAO();
+        sanPham sp = new sanPham("SP01", "lập trình c", new tacGia("TG01"), 2003,
+                20, 20, 20, 10, new theLoai("TL01"), "tieng viet", "");
+        spd.insert(sp);
     }
 }

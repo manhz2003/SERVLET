@@ -6,24 +6,31 @@ public class chiTietDonHang {
     private double soLuong;
     private double giaGoc;
     private double giaBan;
+    private double giamGia;
     private double thueVAT;
     private double tongTien;
 
-    public chiTietDonHang(String maChiTietDonHang, model.donHang donHang, model.sanPham sanPham, double soLuong, double giaGoc, double giaBan, double thueVAT, double tongTien) {
+    public double getGiamGia() {
+        return giamGia;
+    }
+
+    public void setGiamGia(double giamGia) {
+        this.giamGia = giamGia;
+    }
+
+    public chiTietDonHang(String maChiTietDonHang, model.donHang donHang, model.sanPham sanPham, double soLuong, double giaGoc, double giaBan, double giamGia, double thueVAT, double tongTien) {
         this.maChiTietDonHang = maChiTietDonHang;
         this.donHang = donHang;
         this.sanPham = sanPham;
         this.soLuong = soLuong;
         this.giaGoc = giaGoc;
         this.giaBan = giaBan;
+        this.giamGia = giamGia;
         this.thueVAT = thueVAT;
         this.tongTien = tongTien;
     }
 
     public chiTietDonHang() {
-    }
-
-    public chiTietDonHang(String maChiTietDonHang, String maDonHang, String maSanPham, double soLuong, double giaGoc, double giaBan, double thueVAT, double tongTien) {
     }
 
     public String getMaChiTietDonHang() {
